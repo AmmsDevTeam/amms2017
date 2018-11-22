@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>日程管理</title>
+    <link media="all" type="text/css" rel="stylesheet" href="../../css/bootstrap.min.css">
+    <link media="all" type="text/css" rel="stylesheet" href="../../css/common.css">
+	<script src="../../js/jquery-1.8.3.min.js"></script>
+	<script src="../../js/url.js"></script>
+	<script src="../../js/admin/request_navigator.js"></script>
+	<script src="../../js/admin/schedule_management.js"></script>
+</head>
+<body>
+	<div id="navigator" class="header-nav-box">      
+    </div>
+    
+    <div class="input-group">
+    	<input id="cell_phone_txt" type="text" class="form-control" placeholder="输入手机号">
+        <div class="input-group-append" id="button-addon4">
+    	<button id="search_btn" class="btn btn-primary active" type="button">查看</button>
+    	<button id="open_add_schedule_btn" class="btn btn-primary active" type="button">新增</button>
+    	<button id="delete_schedule_btn" class="btn btn-primary active" type="button">删除</button>
+  		</div>
+	</div>
+
+    <div>
+		<table id="attendee_table" class="table table-striped">
+			<thead>
+			    <th>序号</th>
+				<th>手机号</th>
+				<th>时间</th>
+				<th>地点</th>
+				<th>参加活动</th>
+			</thead>			
+			<tbody id="resultpanel">
+			</tbody>
+		</table>		
+	</div>
+
+    <div id="add_schedule_light" class="white_content">
+		<h3 class="div-center">新增</h3>
+		<div class="input-group mb-3">
+		  <div class="input-group-prepend">
+		    <button id="time_arrange_txt_one" class="btn btn-info active" type="button">09:30-11:30</button>
+		  </div>
+		  <input id="activation_place_txt_one" type="text" class="form-control" placeholder="地点">
+		  <input id="activation_title_txt_one" type="text" class="form-control" placeholder="参加活动">
+		</div>
+
+		<div class="input-group mb-3">
+		  <div class="input-group-prepend">
+		    <button id="time_arrange_txt_two" class="btn btn-info active" type="button">10:00-12:00</button>
+		  </div>
+		  <input id="activation_place_txt_two" type="text" class="form-control" placeholder="地点">
+		  <input id="activation_title_txt_two" type="text" class="form-control" placeholder="参加活动">
+		</div>
+
+		<div class="input-group mb-3">
+		  <div class="input-group-prepend">
+		    <button id="time_arrange_txt_three" class="btn btn-info active" type="button">11:30-12:45</button>
+		  </div>
+		  <input id="activation_place_txt_three" type="text" class="form-control" placeholder="地点">
+		  <input id="activation_title_txt_three" type="text" class="form-control" placeholder="参加活动">
+		</div>
+
+		<div class="input-group mb-3">
+		  <div class="input-group-prepend">
+		    <button id="time_arrange_txt_four" class="btn btn-info active" type="button">13:00-17:00</button>
+		  </div>
+		  <input id="activation_place_txt_four" type="text" class="form-control" placeholder="地点">
+		  <input id="activation_title_txt_four" type="text" class="form-control" placeholder="参加活动">
+		</div>
+
+		<div class="input-group mb-3">
+		  <div class="input-group-prepend">
+		    <button id="time_arrange_txt_five" class="btn btn-info active" type="button">18:00-20:00</button>
+		  </div>
+		  <input id="activation_place_txt_five" type="text" class="form-control" placeholder="地点">
+		  <input id="activation_title_txt_five" type="text" class="form-control" placeholder="参加活动">
+		</div>
+		<p class="div-center">
+		    <button id="save_add_schedule_btn" class="btn btn-primary active">保存</button>
+		    <button id="close_add_schedule_btn" class="btn btn-primary active">关闭</button>
+		</p>
+    </div>
+    <div id="add_schedule_fade" class="black_overlay">
+    </div>
+</body>
+</html>

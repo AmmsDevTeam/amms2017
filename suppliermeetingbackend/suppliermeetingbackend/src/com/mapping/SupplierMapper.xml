@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mapping.SupplierMapper">
+    <update id="updateEnrollment" parameterType="com.entity.Enrollment">
+        update enrollment set cell_phone_num=#{cell_phone_num}, full_name=#{full_name}, title=#{title}, gender=#{gender}, supplier_code=#{supplier_code}, supplier_name=#{supplier_name}, estimate_arrive_time=#{estimate_arrive_time}, is_visited=#{is_visited}, is_self_drive=#{is_self_drive}, shuttle_destination=#{shuttle_destination}, meeting_seat_num=#{meeting_seat_num}, dinner_seat_num=#{dinner_seat_num}, comment=#{comment} where cell_phone_num=#{cell_phone_num}
+    </update>
+    <select id="selectAllEnrollment" resultType="com.entity.Enrollment">
+        select cell_phone_num, full_name, title, gender, supplier_code, supplier_name, estimate_arrive_time, is_visited, is_self_drive, shuttle_destination, meeting_seat_num, dinner_seat_num, comment from enrollment order by enrollment_id
+    </select>
+    <insert id="insertEnrollment" parameterType="com.entity.Enrollment">
+        insert into enrollment(cell_phone_num, full_name, title, gender, supplier_code, supplier_name, estimate_arrive_time, is_visited, is_self_drive, shuttle_destination, meeting_seat_num, dinner_seat_num, comment) values(#{cell_phone_num},#{full_name},#{title},#{gender},#{supplier_code},#{supplier_name},#{estimate_arrive_time},#{is_visited},#{is_self_drive},#{shuttle_destination},#{meeting_seat_num},#{dinner_seat_num},#{comment})
+    </insert>
+    <select id="selectOneEnrollment" parameterType="java.lang.String" resultType="com.entity.Enrollment">
+        select cell_phone_num, full_name, title, gender, supplier_code, supplier_name, estimate_arrive_time, is_visited, is_self_drive, shuttle_destination, meeting_seat_num, dinner_seat_num, comment from enrollment where cell_phone_num=#{cell_phone_num}
+    </select>
+    <select id="selectDinnerPartner" parameterType="java.lang.String" resultType="com.entity.Enrollment">
+        select cell_phone_num, full_name, title, gender, supplier_code, supplier_name, estimate_arrive_time, is_visited, is_self_drive, shuttle_destination, meeting_seat_num, dinner_seat_num, comment from enrollment where dinner_seat_num=#{dinner_seat_num}
+    </select>
+    <update id="checkIn" parameterType="com.entity.Enrollment" >
+        update enrollment set comment=#{comment} where cell_phone_num=#{cell_phone_num}
+    </update>
+    <insert id="insertSchedule" parameterType="com.entity.Schedule">
+        insert into schedule(cell_phone_num, full_name, time_arrange, activation_place, activation_title) values(#{cell_phone_num},#{full_name},#{timeArrange},#{activationPlace},#{activationTitle})
+    </insert>
+    <select id="selectSchedule" parameterType="java.lang.String" resultType="com.entity.Schedule">
+        select cell_phone_num, full_name, time_arrange, activation_place, activation_title from schedule where cell_phone_num=#{cell_phone_num} order by time_arrange
+    </select>
+    <delete id="deleteSchedule" parameterType="java.lang.String">
+    	delete from schedule where cell_phone_num=#{cell_phone_num}
+    </delete>
+</mapper>

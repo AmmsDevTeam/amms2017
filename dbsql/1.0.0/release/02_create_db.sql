@@ -1,0 +1,1 @@
+create database supplier owner admin;

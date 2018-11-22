@@ -1,0 +1,11 @@
+var url                      = "http://weixin.baicorv.com";
+//var url                      = "http://127.0.0.1:8080";
+var all_enrollment_url       = url + "/suppliermeetingbackend/rest/SupplierService/enrollment";
+var one_enrollment_url       = url + "/suppliermeetingbackend/rest/SupplierService/enrollment";
+var insert_enrollment_url    = url + "/suppliermeetingbackend/rest/SupplierService/enrollment";
+var update_enrollment_url    = url + "/suppliermeetingbackend/rest/SupplierService/enrollment";
+var checkin_url              = url + "/suppliermeetingbackend/rest/SupplierService/checkin";
+var select_schedule_url      = url + "/suppliermeetingbackend/rest/SupplierService/schedule";
+var insert_schedule_url      = url + "/suppliermeetingbackend/rest/SupplierService/schedule";
+var delete_schedule_url      = url + "/suppliermeetingbackend/rest/SupplierService/deleteschedule";
+var select_dinner_partner_url= url + "/suppliermeetingbackend/rest/SupplierService/dinner";
