@@ -64,7 +64,7 @@ public class TestEnrollment
  	private void selectOneEnrollment()
  	{
 		EnrollmentDao ed = new EnrollmentDao();
-		String cellPhoneNum = "15210066154 ";
+		String cellPhoneNum = "q";
 		Enrollment enroll = ed.selectOneEnrollment(cellPhoneNum);
  	}
  	
